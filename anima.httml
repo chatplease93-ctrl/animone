@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Meta e SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anima - Streetwear old school premium, pantaloncini e canotte eleganti e moderne">
+  <meta name="keywords" content="Anima, streetwear, old school, pantaloncini, canotte, moda, lookbook">
+  <meta property="og:title" content="Anima - Streetwear Old School">
+  <meta property="og:description" content="Scopri Anima, il brand streetwear old school per chi ama lo stile e la qualità">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tuo-brand-anima.com/">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Anima+Streetwear">
+  <title>Anima - Streetwear Old School Premium</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* RESET E BASE */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #222;
+      background-color: #fdfcf9;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAVBAR STICKY */
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background 0.3s;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #1a1a1a;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      font-weight: 600;
+      padding: 5px 0;
+      position: relative;
+    }
+    nav ul li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffb800;
+      transition: width .3s;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0642') center/cover no-repeat fixed;
+      color: white;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hero a {
+      padding: 15px 35px;
+      background: #ffb800;
+      color: #1a1a1a;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .hero a:hover {
+      background: #e69e00;
+      transform: translateY(-3px);
+    }
+
+    /* ANIMAZIONI HERO */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* SEZIONI GENERALI */
+    section {
+      padding: 80px 30px;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+
+    /* ABOUT */
+    .about-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* SERVIZI / CARDS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    }
+    .service-card i {
+      font-size: 3rem;
+      color: #ffb800;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .testimonial-card:hover { transform: translateY(-5px); }
+    .testimonial-card p { font-style: italic; margin-bottom: 15px; }
+    .testimonial-card h4 { font-weight: 700; color: #1a1a1a; }
+
+    /* CALL TO ACTION */
+    .cta {
+      text-align: center;
+      background: #1a1a1a;
+      color: #ffb800;
+      padding: 60px 30px;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .cta h2 { color: #ffb800; margin-bottom: 20px; }
+    .cta a {
+      background: #ffb800;
+      color: #1a1a1a;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .cta a:hover { background: #e69e00; transform: translateY(-3px); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 60px 30px;
+    }
+    footer a { color: #ffb800; }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px){
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Anima</div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">Chi Siamo</a></li>
+          <li><a href="#services">Servizi</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonianze</a></li>
+          <li><a href="#cta">Shop</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Vivi la tua Anima</h1>
+      <p>Streetwear old school premium. Pantaloncini e canotte eleganti e moderni.</p>
+      <a href="#cta">Scopri la Collezione</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Chi Siamo</h2>
+    <p class="about-content">
+      Anima nasce con la missione di portare lo stile old school nel guardaroba moderno.
+      Design premium, materiali di qualità e un’estetica minimalista per chi ama distinguersi.
+    </p>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="services">
+    <h2>Servizi</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-tshirt"></i>
+        <h3>Abbigliamento Premium</h3>
+        <p>Creiamo capi streetwear di alta qualità, con design unico e materiali selezionati.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-palette"></i>
+        <h3>Design Creativo</h3>
+        <p>Ogni prodotto è pensato per avere uno stile distintivo e un look accattivante.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>Spedizioni Veloci</h3>
+        <p>Consegna rapida e sicura in tutta Italia, direttamente a casa tua.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x400" alt="Outfit 1"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x400" alt="Outfit 2"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x400" alt="Outfit 3"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x400" alt="Outfit 4"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>Testimonianze</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"Anima ha trasformato il mio guardaroba! Qualità e stile senza compromessi."</p>
+        <h4>- Luca R.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"I capi sono incredibili, design unico e materiali fantastici."</p>
+        <h4>- Marta F.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Ho ricevuto complimenti ovunque per le mie nuove canotte Anima!"</p>
+        <h4>- Simone L.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section id="cta" class="cta">
+    <h2>Scopri la Collezione Anima</h2>
+    <p>Non perdere l’occasione di indossare lo streetwear old school più elegante e premium.</p>
+    <a href="#hero">Acquista Ora</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Anima. Tutti i diritti riservati.</p>
+    <p>Seguici su 
+      <a href="#">Instagram</a> | 
+      <a href="#">Facebook</a> | 
+      <a href="#">TikTok</a>
+    </p>
+  </footer>
+
+  <script>
+    // Fade in elementi scroll
+    const faders = document.querySelectorAll('.service-card, .testimonial-card, .about-content, .portfolio-item');
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0px)';
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      fader.style.opacity = 0;
+      fader.style.transform = 'translateY(20px)';
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+</body>
+</html>
+
